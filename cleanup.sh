@@ -12,7 +12,7 @@ for SUF in ${SUFFIX[@]}; do
 	METHOD="name"
 	[[ $(echo ${SUF} | tail -c 2) == "/" ]] && METHOD="path"
 	echo "Searching for $SUF, with method $METHOD"
-	for TRASH in $(find . -i${METHOD} "${SUF}"); do
+	for TRASH in $(find . -i${METHOD} ${SUF}); do
 		echo $TRASH
 	done
 done
