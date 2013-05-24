@@ -6,25 +6,34 @@
 #
 
 # List of suffixes to search for. Suffixes with a trailing slash will be considered paths.
-SUFFIX=('*.tar.gz' '*.tar.bz2' '*.zip' 'src/' 'pkg/')
+SUFFIX=('.tar.gz' '.tar.bz2' '.zip' 'src/' 'pkg/')
 
 CLEAN=()
 
 for SUF in ${SUFFIX[@]}; do
-	TYPE="f"
-	[[ "${SUF}" == */ ]] && TYPE="d" && SUF=$(echo ${SUF} | head -c -2)
-	echo "Searching for ${SUF}, type ${TYPE}"
-	for TRASH in $(find . -type ${TYPE} -iname ${SUF}); do
+	TYPE="files"
+	[[ "${SUF: -1}" == "/" ]] && TYPE="directories" && SUF=${SUF::-1}
+	echo -e "\033[32mSearching for ${TYPE} with suffix ${SUF}\033[0m"
+	for TRASH in $(find . -type ${TYPE::1} -iname '*'${SUF}); do
 		echo -e "=> \033[1;31m$TRASH\033[0m"
 		CLEAN=(${CLEAN[@]} $TRASH)
 	done
 done
 
-echo -n "Continue? THIS WILL RECURSIVELY DELETE (y/N) "
+[[ ${#CLEAN[@]} -eq 0 ]] && echo "Directory clean." && exit 0
+
+echo -n "Continue? (y/N) "
 read -n 1 CONT
 echo
 if [[ "$CONT" == "y" ]]; then
 	for TRASH in "${CLEAN[@]}"; do
-		rm -ir "${TRASH}"
+		if [[ -f "${TRASH}" ]]; then
+			rm -ir "${TRASH}"
+		else
+			echo -n "Recursively delete directory '${TRASH}'? "
+			read -n 1 CONT
+			echo
+			[[ "$CONT" == "y" ]] && rm -r "${TRASH}"
+		fi
 	done
 fi
