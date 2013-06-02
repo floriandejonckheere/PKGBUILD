@@ -22,13 +22,13 @@ done
 
 [[ ${#CLEAN[@]} -eq 0 ]] && echo "Directory clean." && exit 0
 
-echo -n "Continue? (y/N) "
+echo -n "Continue? THIS WILL DELETE THE ABOVE FILES WITHOUT CONFIRMATION! (y/N) "
 read -n 1 CONT
 echo
 if [[ "$CONT" == "y" ]]; then
 	for TRASH in "${CLEAN[@]}"; do
 		if [[ -f "${TRASH}" ]]; then
-			rm -ir "${TRASH}"
+			rm -r "${TRASH}"
 		else
 			echo -n "Recursively delete directory '${TRASH}'? "
 			read -n 1 CONT
