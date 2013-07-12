@@ -27,13 +27,6 @@ read -n 1 CONT
 echo
 if [[ "$CONT" == "y" ]]; then
 	for TRASH in "${CLEAN[@]}"; do
-		if [[ -f "${TRASH}" ]]; then
-			rm -r "${TRASH}"
-		else
-			echo -n "Recursively delete directory '${TRASH}'? "
-			read -n 1 CONT
-			echo
-			[[ "$CONT" == "y" ]] && rm -r "${TRASH}"
-		fi
+		rm -rf "${TRASH}"
 	done
 fi
