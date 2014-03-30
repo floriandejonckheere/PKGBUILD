@@ -1,5 +1,0 @@
-2013-05-07 Florian Dejonckheere <florian@floriandejonckheere.be>
-
-	* fontconfig-ubuntu-2.10.2-3 :
-	PKGBUILD changes; added package()
-	Added changelog
