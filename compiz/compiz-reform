@@ -1,0 +1,59 @@
+The Great Compiz AUR reform
+===========================
+
+Compiz stable => compiz
+ccsm						UPDATE		hazard
+compiz -> compiz-core				MERGE
+compiz-core					UPDATE		martadinata666
+compiz-bcop					UPDATE
+compiz-decorator-gtk-no-gnome			DELETE
+compiz-fusion-plugins-extra/-main -> - fusion	RENAME		martadinata666
+compiz-fusion-plugins-main-genie -> - fusion	RENAME		JesusMcCloud
+compiz-fusion-plugins-unsupported -> - fusion	RENAME		leafonsword
+compiz-pure					DELETE		insm
+compiz-xfce					???		korrode
+compizconfig-backend-kconfig4
+compizconfig-python				UPDATE
+libcompizconfig							DasMoeh
+simple-ccsm
+python-pycompiz-svn
+fusion-icon							plp
+emerald						NEW
+
+
+
+
+Compiz++ => compiz-dev
+ccsm-dev					KEEP
+(d) ccsm-bzr					KEEP
+compiz-dev					KEEP		ryon.sherman
+compiz-devel					KEEP
+(d) compiz-core-bzr				KEEP
+(d) compiz-bzr -> compiz-core-bzr		MERGE		ivenvd
+(d) compiz-bzr-sam -> compiz-core-bzr-sam	RENAME		patryk
+compiz-plugins-main/-extra-bzr
+compiz-plugins-main/-extra-dev
+compiz-ubuntu							chenxiaolong
+compizconfig-backend-gconf-bzr
+compizconfig-backend-gconf-dev
+compizconfig-backend-gsettings-bzr
+compizconfig-backend-gsettings-dev
+compizconfig-python-bzr
+compizconfig-python-dev
+compizconfig-python-unity-git
+libcompizconfig-bzr
+libcompizconfig-dev
+
+
+Other:
+compicc						KEEP		orphan
+compiz-alone-utils-git				KEEP		ShadowKyogre
+compiz-boxmenu					KEEP		ShadowKyogre
+compiz-core-unity-git
+compiz-deskmenu
+compiz-fusion-plugin-headtracking-git				speps
+compiz-indicator
+compiz-manager
+compiz-mate							fuhry
+compiz-pipeitems						ShadowKyogre
+compiz-plugin-earth-git						SataMaxx

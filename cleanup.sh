@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 #
 # cleanup.sh - clean up makepkg's trash
 #
