@@ -6,7 +6,7 @@
 #
 
 # List of suffixes to search for. Suffixes with a trailing slash will be considered paths.
-SUFFIX=('.tar.gz' '.tar.bz2' '.part' '.tar.xz' '.zip' 'src/' 'pkg/' '.cpp' '.c')
+SUFFIX=('.tar.gz' '.tar.bz2' '.part' '.xz' '.zip' 'src/' 'pkg/' '.cpp' '.c')
 
 CLEAN=()
 
