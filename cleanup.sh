@@ -6,15 +6,14 @@
 #
 
 # List of suffixes to search for. Suffixes with a trailing slash will be considered paths.
-SUFFIX=('.tar.gz' '.tar.bz2' '.part' '.xz' '.zip' 'src/' 'pkg/' '.cpp' '.c')
+SUFFIX=('.tar.gz' '.tar.bz2' '.part' '.tar.xz' '.zip' 'src/' 'pkg/' '.cpp' '.c')
 
 CLEAN=()
 
 for SUF in ${SUFFIX[@]}; do
-	TYPE="files"
-	[[ "${SUF: -1}" == "/" ]] && TYPE="directories" && SUF=${SUF::-1}
+	[[ "${SUF: -1}" == "/" ]] && SUF=${SUF::-1}
 	echo -e "\033[32mSearching for ${TYPE} with suffix ${SUF}\033[0m"
-	for TRASH in $(find . -type ${TYPE::1} -iname '*'${SUF}); do
+	for TRASH in $(find . -iname '*'${SUF}); do
 		echo -e "=> \033[1;31m$TRASH\033[0m"
 		CLEAN=(${CLEAN[@]} $TRASH)
 	done
