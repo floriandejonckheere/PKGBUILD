@@ -2,7 +2,7 @@
 #
 # prepare-src.sh - downloads and extracts AUR packages
 #
-# Florian Dejonckheere <florian@floriandejonckheere.be>
+# Florian Dejonckheere <florian at floriandejonckheere dot be>
 #
 
 if [[ ! $1 ]]; then

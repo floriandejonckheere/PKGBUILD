@@ -2,7 +2,7 @@
 #
 # cleanup.sh - clean up makepkg's trash
 #
-# Florian Dejonckheere <florian@floriandejonckheere.be>
+# Florian Dejonckheere <florian at floriandejonckheere dot be>
 #
 
 # List of suffixes to search for. Suffixes with a trailing slash will be considered paths.

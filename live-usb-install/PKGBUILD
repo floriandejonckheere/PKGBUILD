@@ -1,5 +1,5 @@
 # Maintainer: andre.laszlo
-# Contributor: Florian Dejonckheere <florian@floriandejonckheere.be>
+# Contributor: Florian Dejonckheere <florian at floriandejonckheere dot be>
 
 pkgname=live-usb-install
 pkgver=2.4.0
