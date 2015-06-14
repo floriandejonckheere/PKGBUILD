@@ -1,3 +1,16 @@
+# Downloaded sources
 *.xz
-pkg/
-src/
+*.tar*
+*.tgz
+*.zip
+
+# Signed sources
+*.asc
+*.sig
+
+# Subfolders, e.g. source or built package trees, vcs
+*/**/
+
+# Misc
+*~
+*.bak
